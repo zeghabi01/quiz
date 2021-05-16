@@ -1,0 +1,565 @@
+$white_color : #FFFFFF; 
+$blue_sky:#32A7F9;
+$q : #181418;
+$c1:#F6209C;
+$c2: #FBC600;
+$c3: #36B84D;
+$c4: #32A7F9;
+$btn:#BFBEBF;
+
+$colors: $c1, $c2, $c3, $c4;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+background-color: $white_color;
+}
+
+.container {
+    direction: rtl;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Cairo', sans-serif;
+}
+
+.navbar > div {
+    color: $blue_sky;
+    margin: 8px 20px 0px 20px;
+}
+
+
+.navbar .questionNumber {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18vh;
+}
+
+.container .questionSide{
+    margin: 10px 0px 15px 0px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    word-wrap: break-word;
+    font-family: 'Cairo', sans-serif;
+}
+
+.container .choiceSide {
+    padding: 8px;
+    margin-bottom: 38px;
+}
+
+.container .choiceSide li {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    position: relative;
+    margin-top: 15px;
+    border-radius: 50px;
+}
+
+.container .choiceSide li span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+}
+
+.container .choiceSide li p {  
+    margin-right: 45px;
+    font-weight: bold;
+}
+
+@for $i from 1 through 4 {
+    .container .choiceSide li:nth-child(#{$i}),.container .choiceSide li:nth-child(#{$i}) span {
+      border: 2px solid nth($colors, $i);
+    }
+    .container .choiceSide li:nth-child(#{$i}) span {
+        background-color: nth($colors, $i);
+        color: $white_color;
+    }
+    .container .choiceSide li:nth-child(#{$i}) p {
+        color: nth($colors, $i);
+    }
+
+    .container .choiceSide li:nth-child(#{$i}):hover {
+        background-color: nth($colors, $i);
+    }
+
+    .container .choiceSide li:nth-child(#{$i}):hover > p {
+        color: $white_color;
+    }
+
+  }
+
+
+.container .choiceSide li.bounceli {
+    animation:bounce .5s linear;
+}
+
+.container .choiceSide li.bounceli2:nth-child(1) {
+    animation:bounce .1s linear;
+}
+ 
+.container .choiceSide li.bounceli2:nth-child(2) {
+    animation:bounce .3s linear;
+}
+ 
+.container .choiceSide li.bounceli2:nth-child(3) {
+    animation:bounce .4s linear;
+}
+ 
+.container .choiceSide li.bounceli2:nth-child(4) {
+    animation:bounce .5s linear;
+}
+
+@keyframes bounce {
+    20%,50%,80%,to {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    70% {
+        transform: translateY(-15px);
+    }
+    90% {
+        transform: translateY(-4px);
+    }
+}
+
+.startNav {
+    background-color: $blue_sky;
+    color: $white_color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.playingGame .nameSection:nth-child(1) {
+    direction:rtl;
+}
+
+
+.playingGame .nameSection span {
+    color: gray;
+    font-weight: bold;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+}
+
+.playingGame .nameSection small {
+    font-weight: bold;
+    color: $blue_sky;
+    font-family: 'Cairo', sans-serif;
+}
+
+.playingGame .nameSection div {
+    margin: 8px;
+    margin-bottom: 0;
+}
+
+.startgame {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+
+.startgame .buttonBox {
+    font-family: 'Cairo', sans-serif;    ;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 40px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 2;
+    font-size: 20px;
+    -webkit-box-shadow: 0px -1px 20px 0px #dcdcdc;
+    -moz-box-shadow: 0px -1px 20px 0px #dcdcdc;
+    box-shadow: 0px -1px 20px 0px #dcdcdc;
+}
+
+
+.startgame .buttonBox button {
+    font-family: 'Cairo', sans-serif;    ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    padding: 8px;
+    color: white;
+    background-color: $blue_sky;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+
+.startgame .buttonBox button:hover {
+    border: 2px solid $blue_sky;
+    background-color: $white_color;
+    color: $blue_sky;
+}
+
+.startgame .buttonBox form input {
+    color: $blue_sky;
+    padding: 5px;
+    text-align: center;
+}
+
+.startgame .buttonBox small span{
+color: red;
+font-weight: bold;
+}
+
+.startgame .buttonBox small{
+    font-size: 13px;
+}
+    
+
+
+.skip {
+    display: flex;
+    justify-content: center;
+}
+
+.skip button {
+    background-color: white;
+    border: 2px solid gray;
+    color: $btn;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 25px;
+    width: 130px;
+    margin-bottom: 8px;
+}
+
+.skip button:hover {
+    background-color: $btn;
+    color: white;
+    border: 2px solid $btn;
+
+}
+
+
+
+
+
+
+// This For JavaScript Code Check it Later
+
+
+// while showing result
+.container .choiceSide li.result {
+    border: 2px solid #c3c3c3
+}
+
+.container .choiceSide li.result span {
+    background-color: #c3c3c3;
+    color : $white_color;
+    border: 2px solid #c3c3c3
+}
+
+.container .choiceSide li.result p {
+    color: #c3c3c3
+}
+
+.container .choiceSide li.disabled {
+    pointer-events: none;
+    user-select: none;
+}
+
+// Correct Answer
+.container .choiceSide li.correct {
+    border: 2px solid green;
+    background-color: green;
+}
+
+.container .choiceSide li.correct span {
+    background-color: green;
+    color : $white_color;
+    border: 2px solid green
+}
+
+.container .choiceSide li.correct p {
+    color: $white_color
+}
+
+
+// Wrong Answer
+.container .choiceSide li.wrong {
+    border: 2px solid red;
+    background-color: red;
+}
+
+.container .choiceSide li.wrong span {
+    background-color: red;
+    color : $white_color;
+    border: 2px solid red
+}
+
+.container .choiceSide li.wrong p {
+    color: $white_color
+}
+
+
+
+// Disable pointer event 
+
+body.disabled {
+    pointer-events: none;
+}
+
+
+//hide timer element
+.timer .hide {
+    display: none;
+}
+
+
+//hide
+
+
+/*************************************************************/
+
+
+.loss {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: $white_color;
+}
+.loss button {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: red;
+    padding: 10px;
+    border-radius: 25px;
+    width: 150px;
+    height: 35px;
+    margin-bottom: 8px;
+}
+.loss button:hover {
+    background-color: red;
+    color: white;
+    border: 2px solid white;
+}
+.loss > * {
+    font-family: 'Cairo', sans-serif;
+}
+
+.loss i {
+    margin-top: 50px;
+}
+.loss p {
+text-align: center;
+}
+
+
+/*******************************************************/@at-root
+
+
+.win {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: $white_color;
+}
+.win button {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: green;
+    padding: 10px;
+    border-radius: 25px;
+    width: 150px;
+    height: 35px;
+    margin-bottom: 8px;
+}
+.win button:hover {
+    background-color: green;
+    color: white;
+    border: 2px solid white;
+}
+.win > * {
+    font-family: 'Cairo', sans-serif;
+}
+
+.win i {
+    margin-top: 50px;
+}
+.win p {
+text-align: center;
+}
+.win h3 {
+    word-wrap:break-word ;
+    width: 81px;
+    text-align: center;
+}
+
+/******************************************/
+
+.hide {
+    display: none;
+}
+
+
+
+/********************/
+
+.base-timer {
+    position: relative;
+    width: 42px;
+    height: 42px;
+  }
+  
+  .base-timer__svg {
+    transform: scaleX(-1);
+  }
+  
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+  
+  .base-timer__path-elapsed {
+    stroke-width: 10px;
+    stroke: grey;
+  }
+  
+  .base-timer__path-remaining {
+    stroke-width: 10px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+  }
+  
+  .base-timer__path-remaining.green {
+    color: rgb(65, 184, 131);
+  }
+  
+  .base-timer__path-remaining.orange {
+    color: orange;
+  }
+  
+  .base-timer__path-remaining.red {
+    color: red;
+  }
+  
+  .base-timer__label {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+
+
+
+  .svg-loader{
+    width: 42px;
+    display:flex;
+    position: relative;
+    align-content: space-around;
+    justify-content: center;
+  }
+
+  .loader-svg{
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    fill: none;
+    stroke-width: 10px;
+    stroke-linecap: round;
+    stroke: gray;
+  }
+
+  .loader-svg.bg{
+    stroke-width: 10px;
+    stroke: rgb(207, 205, 245);
+  }
+
+  
+  .animate{
+    stroke-dasharray: 242.6;
+    animation: fill-animation 1s cubic-bezier(1,1,1,1) 0s infinite;
+  }
+  
+  @keyframes fill-animation{
+    0%{
+      stroke-dasharray: 40 242.6;
+      stroke-dashoffset: 0;
+    }
+    50%{
+      stroke-dasharray: 141.3;
+      stroke-dashoffset: 141.3;
+    }
+    100%{
+      stroke-dasharray: 40 242.6;
+      stroke-dashoffset: 282.6;
+    }
+  }
+  

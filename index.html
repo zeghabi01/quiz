@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="smartman.ttf" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>إختبر نفسك</title>
+</head>
+<body>
+
+     
+    <nav id="startNav" class="startNav">
+        <div class="logo"><i class="fas fa-2x fa-anchor"></i></div>
+    </nav> 
+
+    <div id="gameStartContainer" class="startgame">
+
+                <div class="buttonBox">
+
+                    <p>النجاح هو حصيلة مجهودات صغيرة نكررها كل يوم.</p>
+
+                    <form id="myForm" action="">
+                        <input type="text" placeholder="أدخل إسمك">
+                    </form>
+
+                    <button type="submit"  id="startgame">لعب</button>
+
+                    <small><span>ملاحظة</span> : يمكنك عدم إدخال إسمك سيتم تسجيلك كلاعب غير معروف</small>
+
+                </div>       
+    </div>
+
+
+
+    <div id="playingGame" class="playingGame hide">
+        <div class="nameSection">
+            <div>
+                <small> مرحبا </small><span id="playerName"></span>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="logo"><i class="fas fa-2x fa-anchor"></i></div>
+            
+            <div id="assets" class="timer">
+
+                <div id="loader" class="svg-loader hide">
+                    <svg class="svg-container" height="100" width="100" viewBox="0 0 100 100">
+                        <circle class="loader-svg bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="loader-svg animate" cx="50" cy="50" r="45"></circle>
+                    </svg>
+                </div>
+
+                <div id="ac" class="ac">
+
+                </div>
+                <!-- HERE COUNTDOWN -->
+    
+            <!---FOR CORRECT OR WRONG ANSWER OR SAD FACE -->
+                <i id="correct" style="font-size: 42px; color: green;" class="far fa-check-circle hide"></i>
+    
+                <i id="wrong" style="font-size: 42px; color: red;" class="far fa-times-circle hide"></i>
+
+                <i id="sad" style="font-size: 42px; color: gray;" class="far fa-sad-cry hide"></i>
+                    
+            </div>
+
+            <div id="questionNumber" class="questionNumber">س. <span></span></div>
+        </nav>
+    
+
+        <div class="container">
+
+            <div id="questionSide" class="questionSide">
+                <p>
+                     <!-- HERE QUESTION -->
+                </p>
+            </div>
+    
+            <div id="choicesSide" class="choiceSide">
+                    <ul>
+                        <!-- CHOICES HERE -->
+                    </ul>
+            </div>
+    
+    
+            <footer>
+                <div class="skip">
+                    <button>i do nothing</button>
+                </div>
+            </footer>
+    
+        </div>
+    </div>
+
+
+    <div id="loss" class="loss hide">
+        <i style="font-size: 60px; color: white;" class="far fa-times-circle hide"></i>
+        <h3>لقد خسرت</h3>
+        <p>متأكدون أنك تستطيع النجاح</p>
+        <button onclick="exit()">إغلاق</button>
+        <p>الشخص الحكيم هو الذي يصنع فرصاً أكثر من تلك التى ضاعت منه أو فشل فيها</p>
+    </div>
+
+
+    <div id="win" class="win hide">
+        <i style="font-size: 80px; color: white;" class="fas fa-award"></i>
+        <h3>مبروك لقد ربحت</h3>
+        <button onclick="goBack()">العودة</button>
+        <p>عليك أن تفعل الأشياء التي تعتقد أنه ليس باستطاعتك أن تفعلها</p>
+    </div>
+    
+
+
+
+    <script src="js/app.js"></script>
+    <!-- <script type="module" src="js/countdown.js"></script> -->
+</body>
+</html>

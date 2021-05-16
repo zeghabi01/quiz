@@ -1,0 +1,11 @@
+body color : #FFFFFF
+question color : #181418
+timer color : #32A7F9
+timer color when time < 3 second : red
+choices color :
+1 : #F6209C
+2 : #FBC600
+3 : #36B84D
+4 : #32A7F9
+text button color : #BFBEBF
+border button color : #BFBEBF
